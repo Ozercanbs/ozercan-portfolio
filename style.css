@@ -490,49 +490,49 @@ body.light .lang-switch button {
     background: rgba(0,0,0,0.08);
 }
 
-/* MOBİL TASARIM VE HAMBURGER MENÜ */
+
 @media (max-width: 768px) {
 
-    /* Hero Başlığını Mobilde Küçült */
+   
     .hero h1 {
-        font-size: 28px; /* Masaüstünde 48px idi, mobilde 28px yaptık */
-        line-height: 1.2; /* Satır aralığını biraz sıkılaştırdık */
+        font-size: 28px; 
+        line-height: 1.2; 
     }
 
-    /* Altındaki yazıyı da orantılı küçültelim */
+    
     .hero p {
         font-size: 14px;
-        padding: 0 10px; /* Kenarlardan taşmasın diye biraz boşluk */
+        padding: 0 10px; 
     }
     
-    /* Hamburger İkonunu Göster */
+    
     .menu-toggle {
         display: block;
         font-size: 28px;
         cursor: pointer;
-        color: #fff; /* Light mode için JS ile renk değişimi gerekebilir veya sabit renk */
+        color: #fff; 
     }
 
-    /* Light mode'da ikon rengi */
+    
     body.light .menu-toggle {
         color: #0f172a;
     }
 
     nav {
         padding: 15px 20px;
-        position: relative; /* Menü bunun içine konumlanacak */
+        position: relative; 
     }
 
-    /* Menü Linkleri - Kapalı Hali (Gizli) */
+    
     .nav-links {
-        display: none; /* Başlangıçta gizli */
+        display: none; 
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 100%; /* Nav'ın hemen altına */
+        top: 100%; 
         left: 0;
-        background: rgba(15, 32, 39, 0.95); /* Koyu tema arka plan */
-        backdrop-filter: blur(15px); /* Buzlu cam efekti */
+        background: rgba(15, 32, 39, 0.95); 
+        backdrop-filter: blur(15px); 
         padding: 20px 0;
         text-align: center;
         border-bottom-left-radius: 20px;
@@ -542,24 +542,24 @@ body.light .lang-switch button {
         border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* Light Mode için Menü Arka Planı */
+    
     body.light .nav-links {
         background: rgba(255, 255, 255, 0.95);
         border-top: 1px solid rgba(0,0,0,0.1);
     }
 
-    /* Menü Açıkken (.active class'ı gelince) */
+   
     .nav-links.active {
         display: flex;
         animation: slideDown 0.4s ease forwards;
     }
 
-    /* Linklerin arasındaki boşluk */
+    
     .nav-links li {
         margin: 15px 0;
     }
 
-    /* Açılma Animasyonu */
+    
     @keyframes slideDown {
         from { opacity: 0; transform: translateY(-20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -569,4 +569,19 @@ body.light .lang-switch button {
 
 .menu-toggle {
     display: none;
+}
+
+
+body.light .lang-switch button {
+    background: #e2e8f0;       
+    color: #333;               
+    border: 1px solid #cbd5e1; 
+}
+
+
+body.light .lang-switch button.active {
+    background: linear-gradient(135deg, #00c6ff, #0072ff) !important; 
+    color: #fff;               
+    border: none;              
+    box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4); 
 }
