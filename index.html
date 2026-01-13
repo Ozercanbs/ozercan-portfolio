@@ -131,8 +131,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="cv-info">
         <div>
             <h4 data-tr="Eğitim" data-en="Education">Eğitim</h4>
-            <p data-tr="İstanbul Nişantaşı Üniversitesi\nİnternet ve Ağ Teknolojileri"
-               data-en="Istanbul Nisantasi University\nInternet and Network Technologies">
+            <p data-tr="İstanbul Nişantaşı Üniversitesi\İnternet ve Ağ Teknolojileri"
+               data-en="Istanbul Nisantasi University\Internet and Network Technologies">
                İstanbul Nişantaşı Üniversitesi<br>İnternet ve Ağ Teknolojileri
             </p>
         </div>
@@ -172,7 +172,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     const toggleBtn = document.getElementById("themeToggle");
 
-// Sayfa açıldığında kullanıcı tercihini yükle
 if(localStorage.getItem("theme") === "light"){
     document.body.classList.add("light");
     toggleBtn.textContent = "☀️";
@@ -180,7 +179,6 @@ if(localStorage.getItem("theme") === "light"){
     toggleBtn.textContent = "🌙";
 }
 
-// Tema değiştir
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("light");
 
@@ -237,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     type();
 
-    // Dil değişirse typing effect metinlerini güncelle
     const langButtons = document.querySelectorAll('.lang-switch button');
     langButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -287,36 +284,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Sayfa yüklenince kaydedilmiş dili uygula
     const savedLang = localStorage.getItem('siteLang') || 'tr';
     setLanguage(savedLang);
 });
 </script>
 
 <script>
-    // Hamburger Menü Çalışma Mantığı
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        
-        // İkon değişimi (İsteğe bağlı: Çizgiler çarpı olsun mu?)
+
         const icon = menuToggle.querySelector('i');
         if(navLinks.classList.contains('active')) {
             icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times'); // Çarpı ikonu
+            icon.classList.add('fa-times'); 
         } else {
             icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars'); // Geri hamburger
+            icon.classList.add('fa-bars'); 
         }
     });
 
-    // Menüden bir linke tıklayınca menüyü kapat
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            // İkonu düzelt
             const icon = menuToggle.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
