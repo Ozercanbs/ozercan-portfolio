@@ -653,3 +653,86 @@ body.light .skill:hover {
     border: 1px solid #000000; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); 
 }
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; 
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border: 2px solid #00c6ff; 
+    background: transparent;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #00c6ff;
+    color: #000; 
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.4); 
+}
+
+body.light .filter-btn {
+    border-color: #0072ff;
+    color: #333;
+}
+
+body.light .filter-btn:hover, 
+body.light .filter-btn.active {
+    background: #0072ff;
+    color: #fff;
+}
+
+.project-card {
+    transition: all 0.5s ease; 
+}
+
+.project-card.hide {
+    display: none;
+}  
+project-card.show {
+    animation: fadeIn 0.5s ease; 
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.projects-grid {
+    display: flex;           
+    justify-content: center; 
+    flex-wrap: wrap;         
+    gap: 25px;
+}
+
+.project-card {
+    width: 100%;             
+    max-width: 500px;        
+    flex: 0 0 auto;          
+    
+    text-align: center;      
+    margin: 0 auto;          
+}
+
+.project-card .project-btn {
+    margin-top: 20px; 
+    display: inline-flex; 
+    align-items: center;
+    gap: 8px; 
+}
+
+#projects h2 {
+    text-align: center; 
+    width: 100%;        
+    margin-bottom: 20px; 
+}
