@@ -180,3 +180,187 @@ body.light .project-card {
     background: #fff;
     color: #222;
 }
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 22px;
+    border-radius: 15px;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(135deg, #0a66c2, #004182);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.social-card i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.social-text h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.social-text a {
+    color: #dbe9ff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.social-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+.glass-social{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.glass-card{
+    width:150px;
+    height:150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    border-radius:22px;
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 8px 30px rgba(0,0,0,0.35);
+    transition:0.4s ease;
+}
+
+.glass-card i{
+    font-size:42px;
+}
+
+.glass-card span{
+    font-size:15px;
+    letter-spacing:0.5px;
+}
+
+.glass-card:hover{
+    transform:translateY(-12px) scale(1.05);
+    box-shadow:0 20px 45px rgba(0,0,0,0.55);
+}
+
+/* RENKLER */
+.glass-card.linkedin i{ color:#0a66c2; }
+.glass-card.github i{ color:#f8fafc; }
+.glass-card.mail i{ color:#22c55e; }
+/* =========================
+   LIGHT MODE TASARIM
+========================= */
+
+body.light{
+    background:#f8fafc;
+    color:#0f172a;
+}
+
+/* NAVBAR */
+body.light nav{
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+body.light nav a{
+    color:#0f172a;
+}
+
+/* HERO */
+body.light .hero{
+    background:linear-gradient(135deg,#e0f2fe,#f8fafc);
+}
+
+body.light .hero span{
+    color:#0284c7;
+}
+
+/* CARD GENEL */
+body.light .card,
+body.light .project-card{
+    background:#ffffff;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* SKILLS */
+body.light .skill{
+    background:#e0f2fe;
+    color:#0369a1;
+}
+
+/* GLASS ICON KARTLAR */
+body.light .glass-card{
+    background:rgba(255,255,255,0.65);
+    color:#0f172a;
+    border:1px solid rgba(0,0,0,0.08);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+body.light .glass-card:hover{
+    box-shadow:0 20px 45px rgba(0,0,0,0.2);
+}
+
+/* ICON RENKLERİ AYNI KALSIN */
+body.light .glass-card.linkedin i{ color:#0a66c2; }
+body.light .glass-card.github i{ color:#020617; }
+body.light .glass-card.mail i{ color:#16a34a; }
+
+/* PROJECT CARD */
+body.light .project-card h3{
+    color:#0f172a;
+}
+
+/* FOOTER */
+body.light footer{
+    background:#e5e7eb;
+    color:#020617;
+}
+/* LIGHT MODE HERO ANIMATION */
+body.light .hero{
+    background:linear-gradient(
+        120deg,
+        #e0f2fe,
+        #f8fafc,
+        #dbeafe
+    );
+    background-size:400% 400%;
+    animation:lightHeroMove 12s ease infinite;
+}
+
+@keyframes lightHeroMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+.hero{
+    overflow: visible;
+}
+@media (max-width: 768px){
+    .glass-social{
+        margin-top:20px;
+        padding:0 15px;
+    }
+
+    .glass-card{
+        width:100%;
+        max-width:320px;
+        height:130px;
+    }
+}
+.glass-social{
+    position:relative;
+    z-index:5;
+}
