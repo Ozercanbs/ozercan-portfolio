@@ -492,6 +492,18 @@ body.light .lang-switch button {
 
 /* MOBİL TASARIM VE HAMBURGER MENÜ */
 @media (max-width: 768px) {
+
+    /* Hero Başlığını Mobilde Küçült */
+    .hero h1 {
+        font-size: 28px; /* Masaüstünde 48px idi, mobilde 28px yaptık */
+        line-height: 1.2; /* Satır aralığını biraz sıkılaştırdık */
+    }
+
+    /* Altındaki yazıyı da orantılı küçültelim */
+    .hero p {
+        font-size: 14px;
+        padding: 0 10px; /* Kenarlardan taşmasın diye biraz boşluk */
+    }
     
     /* Hamburger İkonunu Göster */
     .menu-toggle {
@@ -552,6 +564,7 @@ body.light .lang-switch button {
         from { opacity: 0; transform: translateY(-20px); }
         to { opacity: 1; transform: translateY(0); }
     }
+
 }
 
 .menu-toggle {
