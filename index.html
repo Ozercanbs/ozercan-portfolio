@@ -13,7 +13,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <nav>
     <div class="logo">Özercan<span>Baş</span></div>
-    <ul>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links">
         <li><a href="#about" data-tr="Hakkımda" data-en="About Me">Hakkımda</a></li>
         <li><a href="#skills" data-tr="Yetenekler" data-en="Skills">Yetenekler</a></li>
         <li><a href="#projects" data-tr="Projeler" data-en="Projects">Projeler</a></li>
@@ -21,12 +26,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <li><a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
         <li><a href="https://www.linkedin.com/in/özercan-baş-a4413a197/" target="_blank">LinkedIn</a></li>
     </ul>
-    <button id="themeToggle">🌙</button>
-    <div class="lang-switch">
-    <button data-lang="tr" class="active">TR</button>
-    <button data-lang="en">EN</button>
-</div>
 
+    <button id="themeToggle">🌙</button>
+    
+    <div class="lang-switch">
+        <button data-lang="tr" class="active">TR</button>
+        <button data-lang="en">EN</button>
+    </div>
 </nav>
 
 <section class="hero">
@@ -285,6 +291,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem('siteLang') || 'tr';
     setLanguage(savedLang);
 });
+</script>
+
+<script>
+    // Hamburger Menü Çalışma Mantığı
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // İkon değişimi (İsteğe bağlı: Çizgiler çarpı olsun mu?)
+        const icon = menuToggle.querySelector('i');
+        if(navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times'); // Çarpı ikonu
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars'); // Geri hamburger
+        }
+    });
+
+    // Menüden bir linke tıklayınca menüyü kapat
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            // İkonu düzelt
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
 </script>
 
 
