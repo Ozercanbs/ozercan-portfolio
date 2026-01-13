@@ -490,30 +490,70 @@ body.light .lang-switch button {
     background: rgba(0,0,0,0.08);
 }
 
+/* MOBİL TASARIM VE HAMBURGER MENÜ */
 @media (max-width: 768px) {
     
-    
-    nav ul {
-        display: none;
+    /* Hamburger İkonunu Göster */
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #fff; /* Light mode için JS ile renk değişimi gerekebilir veya sabit renk */
     }
 
-    
+    /* Light mode'da ikon rengi */
+    body.light .menu-toggle {
+        color: #0f172a;
+    }
+
     nav {
         padding: 15px 20px;
-        
-        justify-content: space-between; 
-        flex-direction: row; 
+        position: relative; /* Menü bunun içine konumlanacak */
     }
 
-   
-    .glass-social {
-        margin-top: 20px;
-        padding: 0 15px;
-    }
-
-    .glass-card {
+    /* Menü Linkleri - Kapalı Hali (Gizli) */
+    .nav-links {
+        display: none; /* Başlangıçta gizli */
+        flex-direction: column;
         width: 100%;
-        max-width: 320px;
-        height: 130px;
+        position: absolute;
+        top: 100%; /* Nav'ın hemen altına */
+        left: 0;
+        background: rgba(15, 32, 39, 0.95); /* Koyu tema arka plan */
+        backdrop-filter: blur(15px); /* Buzlu cam efekti */
+        padding: 20px 0;
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        z-index: 1000;
+        border-top: 1px solid rgba(255,255,255,0.1);
     }
+
+    /* Light Mode için Menü Arka Planı */
+    body.light .nav-links {
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* Menü Açıkken (.active class'ı gelince) */
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.4s ease forwards;
+    }
+
+    /* Linklerin arasındaki boşluk */
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* Açılma Animasyonu */
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+.menu-toggle {
+    display: none;
 }
