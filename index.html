@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Özercan Baş | Portfolyo</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -189,33 +190,59 @@ toggleBtn.addEventListener("click", () => {
 </script>
 
 <script>
-const texts = [
-  "Bilgisayar Ağları ile ilgileniyorum",
-  "Temel Siber Güvenlik öğreniyorum",
-  "Web projeleri geliştiriyorum"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+    const typingElement = document.getElementById("typing-text");
 
-(function type() {
-  if (count === texts.length) count = 0;
-  currentText = texts[count];
-  letter = currentText.slice(0, ++index);
+    const texts = {
+        tr: [
+            "Bilgisayar Ağları ile ilgileniyorum",
+            "Temel Siber Güvenlik öğreniyorum",
+            "Web projeleri geliştiriyorum"
+        ],
+        en: [
+            "I am interested in Computer Networks",
+            "I am learning Basic Cybersecurity",
+            "I develop Web projects"
+        ]
+    };
 
-  document.getElementById("typing-text").textContent = letter;
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+    let currentLang = localStorage.getItem('siteLang') || 'tr';
 
-  if (letter.length === currentText.length) {
-    setTimeout(() => {
-      index = 0;
-      count++;
-    }, 1500);
-  }
-  setTimeout(type, 100);
-})();
+    function type() {
+        if (count === texts[currentLang].length) count = 0;
+        currentText = texts[currentLang][count];
+        letter = currentText.slice(0, ++index);
+
+        typingElement.textContent = letter;
+
+        if (letter.length === currentText.length) {
+            setTimeout(() => {
+                index = 0;
+                count++;
+            }, 1500);
+        }
+        setTimeout(type, 100);
+    }
+
+    type();
+
+    // Dil değişirse typing effect metinlerini güncelle
+    const langButtons = document.querySelectorAll('.lang-switch button');
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLang = btn.getAttribute('data-lang');
+            count = 0;
+            index = 0;
+        });
+    });
+});
 </script>
+
 
 <script>
 function animateLanguageBars() {
