@@ -1,3 +1,11 @@
+:root {
+    --accent: #00c6ff; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +18,7 @@ body {
     color: #fff;
 }
 
-/* NAVBAR */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -47,7 +55,7 @@ nav a {
     cursor: pointer;
 }
 
-/* HERO */
+
 .hero {
     height: 90vh;
     text-align: center;
@@ -83,7 +91,7 @@ nav a {
     color: #00c6ff;
 }
 
-/* SECTIONS */
+
 section {
     padding: 80px 60px;
 }
@@ -95,7 +103,7 @@ section {
     margin: auto;
 }
 
-/* SKILLS */
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -109,7 +117,7 @@ section {
     text-align: center;
 }
 
-/* PROJECTS */
+
 .projects-grid {
     display: grid;
     gap: 25px;
@@ -121,7 +129,7 @@ section {
     border-radius: 20px;
 }
 
-/* CV */
+
 .cv-section {
     text-align: center;
 }
@@ -140,19 +148,19 @@ section {
     text-decoration: none;
 }
 
-/* CONTACT */
+
 #contact a {
     color: #00c6ff;
     text-decoration: none;
 }
 
-/* FOOTER */
+
 footer {
     text-align: center;
     padding: 20px;
 }
 
-/* SCROLL ANIMATION */
+
 .reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -164,7 +172,7 @@ footer {
     transform: translateY(0);
 }
 
-/* LIGHT MODE */
+
 body.light {
     background: #f4f4f4;
     color: #222;
@@ -255,20 +263,18 @@ body.light .project-card {
     box-shadow:0 20px 45px rgba(0,0,0,0.55);
 }
 
-/* RENKLER */
+
 .glass-card.linkedin i{ color:#0a66c2; }
 .glass-card.github i{ color:#f8fafc; }
 .glass-card.mail i{ color:#22c55e; }
-/* =========================
-   LIGHT MODE TASARIM
-========================= */
+
 
 body.light{
     background:#f8fafc;
     color:#0f172a;
 }
 
-/* NAVBAR */
+
 body.light nav{
     background:rgba(255,255,255,0.8);
     backdrop-filter:blur(10px);
@@ -279,7 +285,7 @@ body.light nav a{
     color:#0f172a;
 }
 
-/* HERO */
+
 body.light .hero{
     background:linear-gradient(135deg,#e0f2fe,#f8fafc);
 }
@@ -288,20 +294,20 @@ body.light .hero span{
     color:#0284c7;
 }
 
-/* CARD GENEL */
+
 body.light .card,
 body.light .project-card{
     background:#ffffff;
     box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* SKILLS */
+
 body.light .skill{
     background:#e0f2fe;
     color:#0369a1;
 }
 
-/* GLASS ICON KARTLAR */
+
 body.light .glass-card{
     background:rgba(255,255,255,0.65);
     color:#0f172a;
@@ -313,22 +319,22 @@ body.light .glass-card:hover{
     box-shadow:0 20px 45px rgba(0,0,0,0.2);
 }
 
-/* ICON RENKLERİ AYNI KALSIN */
+
 body.light .glass-card.linkedin i{ color:#0a66c2; }
 body.light .glass-card.github i{ color:#020617; }
 body.light .glass-card.mail i{ color:#16a34a; }
 
-/* PROJECT CARD */
+
 body.light .project-card h3{
     color:#0f172a;
 }
 
-/* FOOTER */
+
 body.light footer{
     background:#e5e7eb;
     color:#020617;
 }
-/* LIGHT MODE HERO ANIMATION */
+
 body.light .hero{
     background:linear-gradient(
         120deg,
@@ -365,7 +371,7 @@ body.light .hero{
     z-index:5;
 }
 
-/* Glass Hover Efekti */
+
 .card, .project-card {
   transition: all 0.4s ease;
 }
@@ -485,8 +491,21 @@ body.light .lang-switch button {
 }
 
 @media(max-width:768px){
-    /* Mobilde navbar linklerini gizle */
-    .nav-links {
-        display: none;
+    nav {
+        flex-direction: column;
+        padding: 20px;
     }
+    
+    .nav-links {
+        flex-direction: column; 
+        gap: 15px;
+        margin-top: 20px;
+        background: rgba(0,0,0,0.5); 
+        padding: 20px;
+        border-radius: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .logo { margin-bottom: 10px; }
 }
