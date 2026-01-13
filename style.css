@@ -483,3 +483,10 @@ body.light .lang-code {
 body.light .lang-switch button {
     background: rgba(0,0,0,0.08);
 }
+
+@media(max-width:768px){
+    /* Mobilde navbar linklerini gizle */
+    .nav-links {
+        display: none;
+    }
+}
