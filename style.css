@@ -490,22 +490,30 @@ body.light .lang-switch button {
     background: rgba(0,0,0,0.08);
 }
 
-@media(max-width:768px){
+@media (max-width: 768px) {
+    
+    
+    nav ul {
+        display: none;
+    }
+
+    
     nav {
-        flex-direction: column;
-        padding: 20px;
+        padding: 15px 20px;
+        
+        justify-content: space-between; 
+        flex-direction: row; 
     }
-    
-    .nav-links {
-        flex-direction: column; 
-        gap: 15px;
+
+   
+    .glass-social {
         margin-top: 20px;
-        background: rgba(0,0,0,0.5); 
-        padding: 20px;
-        border-radius: 15px;
-        width: 100%;
-        text-align: center;
+        padding: 0 15px;
     }
-    
-    .logo { margin-bottom: 10px; }
+
+    .glass-card {
+        width: 100%;
+        max-width: 320px;
+        height: 130px;
+    }
 }
