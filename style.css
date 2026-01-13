@@ -585,3 +585,66 @@ body.light .lang-switch button.active {
     border: none;              
     box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4); 
 }
+
+
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+
+::-webkit-scrollbar-track {
+    background: #0f2027; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00c6ff, #0072ff);
+    border-radius: 5px;
+    border: 2px solid #0f2027; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0072ff;
+}
+
+
+body.light ::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+
+
+.card:hover, .project-card:hover, .skill:hover {
+    
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.6), 
+                0 0 40px rgba(0, 198, 255, 0.2); 
+    border: 1px solid rgba(0, 198, 255, 0.5); 
+}
+
+body.light .card:hover, 
+body.light .project-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+
+::selection {
+    background: #00c6ff; 
+    color: #000; 
+}
+
+
+::-moz-selection {
+    background: #00c6ff;
+    color: #000;
+}
+
+
+.project-btn, .cv-button, .hero-buttons a {
+    position: relative;
+    overflow: hidden; 
+}
+
+
+
